@@ -10,20 +10,20 @@ from PyQt5.QtCore import QSize
 
 class HelloWindow(QMainWindow):
     def __init__(self):
-        QMainWindow.__init__(self)
+        super(HelloWindow, self).__init__()
 
         self.setMinimumSize(QSize(640, 480))
         self.setWindowTitle("Hello world")
 
-        centralWidget = QWidget(self)
-        self.setCentralWidget(centralWidget)
+        central_widget = QWidget(self)
+        self.setCentralWidget(central_widget)
 
-        gridLayout = QGridLayout(self)
-        centralWidget.setLayout(gridLayout)
+        grid_layout = QGridLayout(self)
+        central_widget.setLayout(grid_layout)
 
         title = QLabel("Hello World from PyQt", self)
         title.setAlignment(QtCore.Qt.AlignCenter)
-        gridLayout.addWidget(title, 0, 0)
+        grid_layout.addWidget(title, 0, 0)
 
 
 if __name__ == "__main__":
